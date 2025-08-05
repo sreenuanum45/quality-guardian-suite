@@ -4,31 +4,32 @@ import { Badge } from "@/components/ui/badge";
 import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { MapPin, Phone, Mail, Linkedin, Github, Download, Eye } from "lucide-react";
-
 const HeroSection = () => {
-  const { ref: heroRef, isVisible } = useScrollAnimation({ triggerOnce: true });
-
-  return (
-    <section 
-      ref={heroRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5 flex items-center justify-center px-4 py-20"
-    >
+  const {
+    ref: heroRef,
+    isVisible
+  } = useScrollAnimation({
+    triggerOnce: true
+  });
+  return <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5 flex items-center justify-center px-4 py-20">
       {/* Animated Background */}
       <ParticlesBackground particleCount={30} />
       
       {/* Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-primary/10 to-tech-secondary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-tech-accent/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-tech-secondary/10 to-tech-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-tech-accent/10 to-primary/10 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-tech-secondary/10 to-tech-accent/10 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '4s'
+      }}></div>
       </div>
 
       <div className="container max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Info */}
-          <div className={`text-center lg:text-left space-y-6 transition-all duration-1000 ${
-            isVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'
-          }`}>
+          <div className={`text-center lg:text-left space-y-6 transition-all duration-1000 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-100px]'}`}>
             <div className="space-y-4">
               <Badge className="bg-gradient-to-r from-tech-primary to-tech-secondary text-white px-4 py-2 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce-subtle">
                 ⚡ Available for New Opportunities
@@ -80,20 +81,13 @@ const HeroSection = () => {
 
             {/* Enhanced Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Button 
-                size="lg" 
-                className="group bg-gradient-to-r from-primary to-tech-secondary hover:from-tech-secondary hover:to-primary hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden"
-              >
+              <Button size="lg" className="group bg-gradient-to-r from-primary to-tech-secondary hover:from-tech-secondary hover:to-primary hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="relative z-10">View GitHub</span>
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="group hover:bg-gradient-to-r hover:from-primary hover:to-tech-secondary hover:text-white hover:border-transparent hover:shadow-xl hover:scale-105 transition-all duration-500 relative overflow-hidden"
-              >
+              <Button variant="outline" size="lg" className="group hover:bg-gradient-to-r hover:from-primary hover:to-tech-secondary hover:text-white hover:border-transparent hover:shadow-xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tech-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Download className="h-4 w-4 mr-2 group-hover:animate-bounce transition-transform duration-300" />
                 <span className="relative z-10">Download Resume</span>
@@ -102,9 +96,7 @@ const HeroSection = () => {
           </div>
 
           {/* Enhanced Profile Card */}
-          <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
-            isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'
-          }`}>
+          <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[100px]'}`}>
             <Card className="group p-8 bg-gradient-to-br from-card via-card to-section-bg shadow-2xl hover:shadow-floating backdrop-blur-sm border-glass-border hover:scale-105 transition-all duration-700 max-w-md w-full relative overflow-hidden">
               {/* Glassmorphism Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -120,7 +112,7 @@ const HeroSection = () => {
                     <span className="animate-tilt">AS</span>
                   </div>
                   {/* Floating Ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-rotate-slow"></div>
+                  <div className="absolute inset-0 border-2 border-white/30 animate-rotate-slow rounded-full"></div>
                 </div>
                 
                 {/* Enhanced Stats */}
@@ -149,10 +141,7 @@ const HeroSection = () => {
                 </div>
                 
                 {/* View Portfolio Button */}
-                <Button 
-                  variant="ghost" 
-                  className="w-full group bg-gradient-to-r from-transparent to-transparent hover:from-primary/10 hover:to-tech-secondary/10 border border-primary/20 hover:border-primary/40 transition-all duration-300"
-                >
+                <Button variant="ghost" className="w-full group bg-gradient-to-r from-transparent to-transparent hover:from-primary/10 hover:to-tech-secondary/10 border border-primary/20 hover:border-primary/40 transition-all duration-300">
                   <Eye className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   Explore Portfolio
                 </Button>
@@ -161,8 +150,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
