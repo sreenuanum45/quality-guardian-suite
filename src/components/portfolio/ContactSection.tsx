@@ -15,10 +15,10 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {/* Contact Info */}
-          <Card className="p-8 hover:shadow-xl transition-all duration-500 animate-scale-in bg-gradient-to-br from-card to-section-bg">
-            <h3 className="text-xl font-semibold mb-6 text-primary">Get In Touch</h3>
+          <Card className="glass-card glass-hover glow-on-hover p-6 sm:p-8 transition-all duration-500 animate-scale-in border border-primary/20">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 gradient-text">Get In Touch</h3>
             
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors duration-300">
@@ -54,8 +54,8 @@ const ContactSection = () => {
           </Card>
 
           {/* Quick Actions */}
-          <Card className="p-8 hover:shadow-xl transition-all duration-500 animate-scale-in bg-gradient-to-br from-card to-background">
-            <h3 className="text-xl font-semibold mb-6 text-tech-secondary">Quick Actions</h3>
+          <Card className="glass-card glass-hover glow-on-hover p-6 sm:p-8 transition-all duration-500 animate-scale-in border border-tech-secondary/20">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 bg-gradient-to-r from-tech-secondary to-tech-accent bg-clip-text text-transparent">Quick Actions</h3>
             
             <div className="space-y-4">
               <Button 
@@ -97,9 +97,9 @@ const ContactSection = () => {
         </div>
 
         {/* Professional Summary */}
-        <Card className="p-8 animate-slide-up bg-gradient-to-r from-primary/5 to-tech-secondary/5">
+        <Card className="glass-card glass-hover p-6 sm:p-8 animate-slide-up border border-primary/20 glow-on-hover">
           <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">Professional Summary</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 gradient-text">Professional Summary</h3>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Detail-oriented QA Automation Engineer with 2.6+ years of experience in manual and automated testing 
               of web and API applications. Proficient in designing robust hybrid automation frameworks and integrating 

@@ -66,22 +66,22 @@ const ExperienceSection = () => {
                   <Briefcase className="h-3 w-3 text-white" />
                 </div>
 
-                {/* Experience Card */}
-                <Card className={`p-6 w-full md:w-5/12 ml-12 md:ml-0 hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-card to-section-bg ${
+                {/* Experience Card with Glassmorphism */}
+                <Card className={`glass-card glass-hover glow-on-hover p-4 sm:p-6 w-full md:w-5/12 ml-8 sm:ml-12 md:ml-0 transition-all duration-300 border border-primary/20 ${
                   index % 2 === 0 ? 'md:mr-auto md:ml-8' : 'md:ml-auto md:mr-8'
                 }`}>
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <Badge className="bg-primary text-primary-foreground">
+                        <Badge className="glass-card bg-primary/80 text-primary-foreground text-xs sm:text-sm px-2 sm:px-3 py-1">
                           {exp.type}
                         </Badge>
-                        <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-1" />
+                        <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                           {exp.period}
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold gradient-text mb-1">
                         {exp.title}
                       </h3>
                       <div className="flex items-center text-muted-foreground mb-2">

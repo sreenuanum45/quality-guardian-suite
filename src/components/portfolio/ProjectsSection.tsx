@@ -48,30 +48,31 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="p-6 hover:shadow-xl transition-all duration-500 animate-scale-in group bg-gradient-to-br from-card to-background overflow-hidden relative"
+              className="glass-card glass-hover glow-on-hover p-4 sm:p-6 transition-all duration-500 animate-scale-in group overflow-hidden relative border border-primary/20"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Background Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-tech-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Enhanced Glassmorphism Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-tech-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glass-morph"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-tech-accent/5 to-primary/5 opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
               
-              <div className="relative z-10 space-y-6">
+              <div className="relative z-10 space-y-4 sm:space-y-6">
                 {/* Header */}
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
-                    <Badge className="bg-tech-primary text-white">
+                    <Badge className="glass-card bg-tech-primary/80 text-white text-xs sm:text-sm px-2 sm:px-3 py-1">
                       {project.category}
                     </Badge>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-1" />
+                    <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                       {project.period}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-105 transition-transform duration-300">
                     {project.title}
                   </h3>
                   

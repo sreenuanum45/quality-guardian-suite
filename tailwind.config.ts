@@ -148,6 +148,31 @@ export default {
 					'0%, 50%, 100%': { transform: 'rotate(0deg)' },
 					'25%': { transform: 'rotate(1deg)' },
 					'75%': { transform: 'rotate(-1deg)' }
+				},
+				'glass-morph': {
+					'0%': { 
+						background: 'rgba(255, 255, 255, 0.1)',
+						backdropFilter: 'blur(16px)'
+					},
+					'50%': { 
+						background: 'rgba(255, 255, 255, 0.15)',
+						backdropFilter: 'blur(20px)'
+					},
+					'100%': { 
+						background: 'rgba(255, 255, 255, 0.1)',
+						backdropFilter: 'blur(16px)'
+					}
+				},
+				'skill-glow': {
+					'0%': { 
+						boxShadow: '0 0 5px hsl(var(--primary) / 0.3)',
+					},
+					'50%': { 
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--tech-secondary) / 0.4)',
+					},
+					'100%': { 
+						boxShadow: '0 0 5px hsl(var(--primary) / 0.3)',
+					}
 				}
 			},
 			animation: {
@@ -165,7 +190,9 @@ export default {
 				'shimmer': 'shimmer 2s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 10s linear infinite',
-				'tilt': 'tilt 3s ease-in-out infinite'
+				'tilt': 'tilt 3s ease-in-out infinite',
+				'glass-morph': 'glass-morph 4s ease-in-out infinite',
+				'skill-glow': 'skill-glow 2s ease-in-out infinite'
 			}
 		}
 	},
