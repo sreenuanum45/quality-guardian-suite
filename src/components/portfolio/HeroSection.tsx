@@ -11,7 +11,7 @@ const HeroSection = () => {
   } = useScrollAnimation({
     triggerOnce: true
   });
-  return <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5 flex items-center justify-center px-4 py-20">
+  return <section id="home" ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5 flex items-center justify-center px-4 py-20">
       {/* Animated Background */}
       <ParticlesBackground particleCount={30} />
       

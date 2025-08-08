@@ -78,7 +78,7 @@ const highlights = [
 
 const AchievementsSection = () => {
   return (
-    <section className="py-20 bg-section-bg">
+    <section id="achievements" className="py-20 bg-section-bg">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent">

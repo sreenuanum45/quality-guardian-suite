@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5">
+    <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5">
       <div className="container max-w-4xl mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent">

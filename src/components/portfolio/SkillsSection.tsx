@@ -52,7 +52,7 @@ const SkillsSection = () => {
   const { ref: skillsRef, animatedItems } = useStaggeredAnimation(150);
 
   return (
-    <section className="relative py-20 bg-section-bg overflow-hidden">
+    <section id="skills" className="relative py-20 bg-section-bg overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-tech-secondary/20 animate-gradient-shift bg-[length:200%_auto]"></div>
