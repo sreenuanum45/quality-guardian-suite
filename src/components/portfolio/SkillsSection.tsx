@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import { Progress } from "@/components/ui/progress";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
@@ -47,6 +47,25 @@ const technologies = [
   "Postman", "JMeter", "Cucumber", "Git", "GitHub", "ExtentReports",
   "WireMock", "JSON", "XML", "Page Object Model"
 ];
+
+const techLogos: Record<string, string> = {
+  Selenium: "https://www.vectorlogo.zone/logos/selenium/selenium-icon.svg",
+  TestNG: "/tech/testng.svg",
+  Maven: "https://www.vectorlogo.zone/logos/apache_maven/apache_maven-icon.svg",
+  Jenkins: "https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg",
+  JIRA: "https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg",
+  "REST Assured": "/tech/rest-assured.svg",
+  Postman: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+  JMeter: "https://www.vectorlogo.zone/logos/apache_jmeter/apache_jmeter-icon.svg",
+  Cucumber: "https://www.vectorlogo.zone/logos/cucumberio/cucumberio-icon.svg",
+  Git: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+  GitHub: "https://www.vectorlogo.zone/logos/github/github-icon.svg",
+  ExtentReports: "/tech/extentreports.svg",
+  WireMock: "/tech/wiremock.svg",
+  JSON: "/tech/json.svg",
+  XML: "/tech/xml.svg",
+  "Page Object Model": "/tech/pom.svg",
+} as const;
 
 const SkillsSection = () => {
   const { ref: skillsRef, animatedItems } = useStaggeredAnimation(150);
@@ -131,7 +150,7 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Enhanced Technologies Cloud with Glassmorphism */}
+        {/* Technologies & Tools - Logo Grid */}
         <Card className="group glass-card glass-hover glow-on-hover p-6 sm:p-8 animate-slide-up shadow-lg transition-all duration-500 relative overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-tech-secondary/10 to-tech-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-rotate bg-[length:400%_400%]"></div>
@@ -141,24 +160,32 @@ const SkillsSection = () => {
               🛠️ Technologies & Tools
             </h3>
             
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-              {technologies.map((tech, index) => (
-                <Badge 
-                  key={tech}
-                  variant="secondary"
-                  className="group/badge glass-card px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm hover:bg-gradient-to-r hover:from-primary hover:to-tech-secondary hover:text-white hover:scale-110 hover:shadow-lg glow-on-hover transition-all duration-300 cursor-default relative overflow-hidden border border-primary/20"
-                  style={{ 
-                    animationDelay: `${index * 0.05}s`,
-                    animation: 'scale-in 0.4s ease-out forwards'
-                  }}
-                >
-                  {/* Enhanced Shimmer Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/badge:opacity-100 group-hover/badge:animate-shimmer"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-tech-secondary/10 to-tech-accent/10 opacity-0 group-hover/badge:opacity-50 transition-opacity duration-300"></div>
-                  <span className="relative z-10">{tech}</span>
-                </Badge>
-              ))}
-            </div>
+            <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6">
+              {technologies.map((tech, index) => {
+                const src = techLogos[tech] ?? "/placeholder.svg";
+                return (
+                  <li key={tech} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
+                    <figure
+                      className="group/tech rounded-xl border border-primary/15 bg-background/60 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow duration-300 p-3 sm:p-4 flex flex-col items-center justify-center text-center"
+                      aria-label={`${tech} technology`}
+                      title={tech}
+                    >
+                      <img
+                        src={src}
+                        alt={`${tech} logo`}
+                        loading="lazy"
+                        width={48}
+                        height={48}
+                        className="h-8 w-8 sm:h-10 sm:w-10 object-contain mb-2"
+                      />
+                      <figcaption className="text-xs sm:text-sm font-medium text-foreground/90 truncate max-w-[8rem]">
+                        {tech}
+                      </figcaption>
+                    </figure>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </Card>
       </div>
