@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Calendar, Award } from "lucide-react";
+import lambdatestCert from "@/assets/certifications/lambdatest-at101.png";
 
 const education = [
   {
@@ -145,6 +146,77 @@ const EducationSection = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+
+            <div className="mt-8 space-y-4">
+              <div className="flex items-center gap-2">
+                <Award className="h-5 w-5 text-tech-accent" />
+                <h4 className="text-lg font-semibold text-foreground">Verified Certificates</h4>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Card className="p-4 bg-gradient-to-br from-card to-background hover:shadow-md transition-all">
+                  <a
+                    href="https://www.testdome.com/certificates/e4af0c2469c24bc1964b453d557a990a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4"
+                    aria-label="View TestDome REST API certificate for Anumandla Sreenu"
+                  >
+                    <div className="flex-1">
+                      <div className="text-sm text-muted-foreground">TestDome</div>
+                      <div className="font-semibold text-foreground">REST API Certificate</div>
+                      <div className="text-xs text-muted-foreground">Anumandla Sreenu • Verified</div>
+                    </div>
+                    <div className="text-right">
+                      <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs text-foreground">
+                        View
+                      </span>
+                    </div>
+                  </a>
+                </Card>
+
+                <Card className="p-4 bg-gradient-to-br from-card to-background hover:shadow-md transition-all">
+                  <a
+                    href="https://www.lambdatest.com/certifications/lambdatest-certified/AT101-B7AZT8.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                    aria-label="View LambdaTest Accessibility Testing 101 Certificate"
+                  >
+                    <img
+                      src={lambdatestCert}
+                      alt="LambdaTest Accessibility Testing 101 certificate (84.25% score)"
+                      loading="lazy"
+                      className="w-full h-40 object-contain rounded-md border bg-muted"
+                    />
+                    <div className="mt-2">
+                      <div className="font-semibold text-foreground">Accessibility Testing 101</div>
+                      <p className="text-xs text-muted-foreground">Score: 84.25% • Valid 2 years</p>
+                    </div>
+                  </a>
+                </Card>
+
+                <Card className="p-4 sm:col-span-2 bg-gradient-to-br from-card to-background hover:shadow-md transition-all">
+                  <a
+                    href="https://www.udemy.com/certificate/UC-608fe8b3-6a72-4a08-af6a-d98a44dda0b5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+                    aria-label="View Udemy ZeroToHero Cucumber BDD certificate"
+                  >
+                    <div className="flex-1">
+                      <div className="text-sm text-muted-foreground">Udemy</div>
+                      <div className="font-semibold text-foreground">
+                        ZeroToHero Cucumber BDD – Basics, Advanced & Framework Design
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs text-foreground">
+                      View
+                    </span>
+                  </a>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
