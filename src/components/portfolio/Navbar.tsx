@@ -13,6 +13,7 @@ import {
   FileText,
   Menu,
 } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navItems = [
   { label: "Home", id: "home", Icon: Home },
@@ -67,16 +68,18 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-2">
             <Button asChild size="sm" variant="outline" className="hover:bg-primary hover:text-primary-foreground">
-              <a href="/resume.pdf" target="_blank" rel="noopener" aria-label="Open resume">
+              <a href="https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Open resume">
                 <span className="inline-flex items-center gap-2">
                   <FileText className="h-4 w-4" /> Resume
                 </span>
               </a>
             </Button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
             <Button variant="ghost" size="icon" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
               <Menu className="h-5 w-5" />
             </Button>
@@ -101,7 +104,7 @@ const Navbar = () => {
               ))}
               <li className="col-span-2">
                 <Button asChild variant="secondary" className="w-full">
-                  <a href="/resume.pdf" target="_blank" rel="noopener">
+                  <a href="https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                     <span className="inline-flex items-center gap-2">
                       <FileText className="h-4 w-4" /> Resume
                     </span>

@@ -177,6 +177,11 @@ const SkillsSection = () => {
                         width={48}
                         height={48}
                         className="h-8 w-8 sm:h-10 sm:w-10 object-contain mb-2"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          img.onerror = null;
+                          img.src = "/placeholder.svg";
+                        }}
                       />
                       <figcaption className="text-xs sm:text-sm font-medium text-foreground/90 truncate max-w-[8rem]">
                         {tech}

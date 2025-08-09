@@ -27,7 +27,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-medium">Phone</div>
-                  <div className="text-sm text-muted-foreground">+91-7416472820</div>
+                  <a href="tel:+917416472820" className="text-sm text-muted-foreground underline-offset-4 hover:underline" aria-label="Call +91-7416472820">+91-7416472820</a>
                 </div>
               </div>
               
@@ -37,7 +37,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-medium">Email</div>
-                  <div className="text-sm text-muted-foreground">anumandlasreenu@gmail.com</div>
+                  <a href="mailto:anumandlasreenu@gmail.com" className="text-sm text-muted-foreground underline-offset-4 hover:underline" aria-label="Send email to anumandlasreenu@gmail.com">anumandlasreenu@gmail.com</a>
                 </div>
               </div>
               
@@ -59,29 +59,44 @@ const ContactSection = () => {
             
             <div className="space-y-4">
               <Button 
+                asChild
                 size="lg" 
                 className="w-full bg-gradient-to-r from-primary to-tech-secondary hover:shadow-lg transition-all duration-300"
               >
-                <Download className="h-5 w-5 mr-2" />
-                Download Resume
+                <a href="https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Download resume">
+                  <span className="inline-flex items-center">
+                    <Download className="h-5 w-5 mr-2" />
+                    Download Resume
+                  </span>
+                </a>
               </Button>
               
               <Button 
+                asChild
                 variant="outline" 
                 size="lg" 
                 className="w-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Linkedin className="h-5 w-5 mr-2" />
-                View LinkedIn Profile
+                <a href="https://www.linkedin.com/in/anumandlasreenu/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">
+                  <span className="inline-flex items-center">
+                    <Linkedin className="h-5 w-5 mr-2" />
+                    View LinkedIn Profile
+                  </span>
+                </a>
               </Button>
               
               <Button 
+                asChild
                 variant="outline" 
                 size="lg" 
                 className="w-full hover:bg-tech-secondary hover:text-white transition-all duration-300"
               >
-                <Github className="h-5 w-5 mr-2" />
-                Check GitHub Portfolio
+                <a href="https://github.com/sreenuanum45" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">
+                  <span className="inline-flex items-center">
+                    <Github className="h-5 w-5 mr-2" />
+                    Check GitHub Portfolio
+                  </span>
+                </a>
               </Button>
             </div>
             

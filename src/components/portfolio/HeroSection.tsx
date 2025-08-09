@@ -63,11 +63,15 @@ const HeroSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <Phone className="h-4 w-4 text-tech-primary" />
-                <span>+91-7416472820</span>
+                <a href="tel:+917416472820" className="underline-offset-4 hover:underline" aria-label="Call +91-7416472820">
+                  +91-7416472820
+                </a>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <Mail className="h-4 w-4 text-tech-primary" />
-                <span>anumandlasreenu@gmail.com</span>
+                <a href="mailto:anumandlasreenu@gmail.com" className="underline-offset-4 hover:underline" aria-label="Send email to anumandlasreenu@gmail.com">
+                  anumandlasreenu@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <MapPin className="h-4 w-4 text-tech-primary" />
@@ -75,22 +79,28 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <Linkedin className="h-4 w-4 text-tech-primary" />
-                <span>LinkedIn Profile</span>
+                <a href="https://www.linkedin.com/in/anumandlasreenu/" target="_blank" rel="noopener noreferrer" className="underline-offset-4 hover:underline" aria-label="Open LinkedIn profile">
+                  LinkedIn Profile
+                </a>
               </div>
             </div>
 
             {/* Enhanced Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Button size="lg" className="group bg-gradient-to-r from-primary to-tech-secondary hover:from-tech-secondary hover:to-primary hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10">View GitHub</span>
+              <Button asChild size="lg" className="group bg-gradient-to-r from-primary to-tech-secondary hover:from-tech-secondary hover:to-primary hover:shadow-2xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
+                <a href="https://github.com/sreenuanum45" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                  <span className="relative z-10">View GitHub</span>
+                </a>
               </Button>
               
-              <Button variant="outline" size="lg" className="group hover:bg-gradient-to-r hover:from-primary hover:to-tech-secondary hover:text-white hover:border-transparent hover:shadow-xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tech-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Download className="h-4 w-4 mr-2 group-hover:animate-bounce transition-transform duration-300" />
-                <span className="relative z-10">Download Resume</span>
+              <Button asChild variant="outline" size="lg" className="group hover:bg-gradient-to-r hover:from-primary hover:to-tech-secondary hover:text-white hover:border-transparent hover:shadow-xl hover:scale-105 transition-all duration-500 relative overflow-hidden">
+                <a href="https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Download resume">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tech-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce transition-transform duration-300" />
+                  <span className="relative z-10">Download Resume</span>
+                </a>
               </Button>
             </div>
           </div>
