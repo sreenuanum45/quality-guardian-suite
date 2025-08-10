@@ -49,17 +49,17 @@ const technologies = [
 ];
 
 const techLogos: Record<string, string> = {
-  Selenium: "https://www.vectorlogo.zone/logos/selenium/selenium-icon.svg",
+  Selenium: "/tech/selenium.svg",
   TestNG: "/tech/testng.svg",
-  Maven: "https://www.vectorlogo.zone/logos/apache_maven/apache_maven-icon.svg",
-  Jenkins: "https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg",
-  JIRA: "https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg",
+  Maven: "/tech/maven.svg",
+  Jenkins: "/tech/jenkins.svg",
+  JIRA: "/tech/jira.svg",
   "REST Assured": "/tech/rest-assured.svg",
-  Postman: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
-  JMeter: "https://www.vectorlogo.zone/logos/apache_jmeter/apache_jmeter-icon.svg",
-  Cucumber: "https://www.vectorlogo.zone/logos/cucumberio/cucumberio-icon.svg",
-  Git: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
-  GitHub: "https://www.vectorlogo.zone/logos/github/github-icon.svg",
+  Postman: "/tech/postman.svg",
+  JMeter: "/tech/jmeter.svg",
+  Cucumber: "/tech/cucumber.svg",
+  Git: "/tech/git.svg",
+  GitHub: "/tech/github.svg",
   ExtentReports: "/tech/extentreports.svg",
   WireMock: "/tech/wiremock.svg",
   JSON: "/tech/json.svg",
@@ -166,7 +166,8 @@ const SkillsSection = () => {
                 return (
                   <li key={tech} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
                     <figure
-                      className="group/tech rounded-xl border border-primary/15 bg-background/60 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow duration-300 p-3 sm:p-4 flex flex-col items-center justify-center text-center"
+                      tabIndex={0}
+                      className="group/tech rounded-xl border border-primary/15 bg-background/60 backdrop-blur-sm shadow-sm hover:shadow-lg transition-all duration-300 p-3 sm:p-4 flex flex-col items-center justify-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 ring-offset-background hover:-translate-y-0.5"
                       aria-label={`${tech} technology`}
                       title={tech}
                     >
