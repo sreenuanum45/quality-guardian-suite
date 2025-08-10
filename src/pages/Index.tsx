@@ -13,15 +13,17 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <EducationSection />
-      <AchievementsSection />
-      <TestimonialsSection />
-      <ContactSection />
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <EducationSection />
+        <AchievementsSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
     </div>
   );
 };

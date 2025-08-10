@@ -197,6 +197,24 @@ const EducationSection = () => {
                   </a>
                 </Card>
 
+                <Card className="p-4 bg-gradient-to-br from-card to-background hover:shadow-md transition-all">
+                  <div
+                    className="block"
+                    aria-label="Infosys Springboard JMeter Basics certificate"
+                  >
+                    <img
+                      src="/lovable-uploads/8d27554b-c53d-462f-89ad-9b376386f2f6.png"
+                      alt="Infosys Springboard JMeter Basics certificate for Anumandla Sreenu"
+                      loading="lazy"
+                      className="w-full h-40 object-contain rounded-md border bg-muted"
+                    />
+                    <div className="mt-2">
+                      <div className="font-semibold text-foreground">JMeter Basics</div>
+                      <p className="text-xs text-muted-foreground">Infosys Springboard • Issued July 6, 2025</p>
+                    </div>
+                  </div>
+                </Card>
+
                 <Card className="p-4 sm:col-span-2 bg-gradient-to-br from-card to-background hover:shadow-md transition-all">
                   <a
                     href="https://www.udemy.com/certificate/UC-608fe8b3-6a72-4a08-af6a-d98a44dda0b5/"

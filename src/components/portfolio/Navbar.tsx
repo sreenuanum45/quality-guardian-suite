@@ -40,11 +40,14 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="border-b border-border bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <a href="#main-content" className="sr-only focus:not-sr-only fixed top-2 left-2 z-[60] bg-primary text-primary-foreground px-3 py-2 rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+        Skip to main content
+      </a>
+      <nav aria-label="Primary" className="border-b border-border bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto max-w-7xl px-4 h-14 flex items-center justify-between">
           <button
             onClick={() => scrollTo("home")}
-            className="font-bold text-sm md:text-base bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent"
+            className="font-bold text-sm md:text-base bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label="Go to Home"
           >
             AS • Portfolio
@@ -56,7 +59,9 @@ const Navbar = () => {
               <li key={id}>
                 <button
                   onClick={() => scrollTo(id)}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors story-link"
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  role="link"
+                  aria-label={`Go to ${label}`}
                 >
                   <span className="inline-flex items-center gap-2">
                     <Icon className="h-4 w-4" /> {label}
@@ -67,7 +72,7 @@ const Navbar = () => {
           </ul>
 
           <div className="hidden md:flex items-center gap-2">
-            <Button asChild size="sm" variant="outline" className="hover:bg-primary hover:text-primary-foreground">
+            <Button asChild size="sm" variant="outline" className="hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
               <a href="https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Open resume">
                 <span className="inline-flex items-center gap-2">
                   <FileText className="h-4 w-4" /> Resume
@@ -80,7 +85,7 @@ const Navbar = () => {
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-1">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
+            <Button variant="ghost" size="icon" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((v) => !v)}>
               <Menu className="h-5 w-5" />
             </Button>
           </div>
@@ -88,7 +93,7 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden border-t border-border">
+          <div id="mobile-menu" className="md:hidden border-t border-border">
             <ul className="px-2 py-2 grid grid-cols-2 gap-1">
               {navItems.map(({ label, id, Icon }) => (
                 <li key={id}>
