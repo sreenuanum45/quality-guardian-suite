@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
+import ProtectedMailto from "@/components/security/ProtectedMailto";
 
 const ContactSection = () => {
   return (
@@ -37,7 +38,12 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-medium">Email</div>
-                  <a href="mailto:anumandlasreenu@gmail.com" className="text-sm text-muted-foreground underline-offset-4 hover:underline" aria-label="Send email to anumandlasreenu@gmail.com">anumandlasreenu@gmail.com</a>
+                  <ProtectedMailto
+                    user="anumandlasreenu"
+                    domain="gmail.com"
+                    className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                    aria-label="Send email"
+                  />
                 </div>
               </div>
               

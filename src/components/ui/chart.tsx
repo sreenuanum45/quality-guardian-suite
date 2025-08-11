@@ -6,6 +6,16 @@ import { cn } from "@/lib/utils"
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" } as const
 
+// Basic sanitizer to prevent CSS injection via color values used in innerHTML.
+const isSafeColor = (value?: string) => {
+  if (!value) return false;
+  const v = value.trim();
+  if (v.length > 100) return false;
+  // Disallow characters that can break out of CSS variable context
+  if (/[;{}<>]/.test(v)) return false;
+  return true;
+}
+
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode
