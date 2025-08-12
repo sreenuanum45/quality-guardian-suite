@@ -1,7 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
 import ProtectedMailto from "@/components/security/ProtectedMailto";
+
+const FORMSPREE_ID = ""; // Set your Formspree form ID to enable the contact form securely.
 
 const ContactSection = () => {
   return (
@@ -129,6 +134,35 @@ const ContactSection = () => {
             </p>
           </div>
         </Card>
+
+        {FORMSPREE_ID && (
+          <Card className="mt-8 glass-card glass-hover p-6 sm:p-8 animate-slide-up border border-tech-secondary/20 glow-on-hover">
+            <h3 className="text-lg sm:text-xl font-semibold mb-6 bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent">Send a Message</h3>
+            <form method="POST" action={`https://formspree.io/f/${FORMSPREE_ID}`} className="grid grid-cols-1 gap-4" aria-label="Contact form">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" name="name" placeholder="Your name" required autoComplete="name" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" name="email" type="email" placeholder="you@example.com" required autoComplete="email" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea id="message" name="message" placeholder="How can I help you?" required rows={5} />
+              </div>
+
+              <input type="text" name="_gotcha" className="hidden" tabIndex={-1} aria-hidden="true" />
+              <div className="flex justify-end">
+                <Button type="submit" className="bg-gradient-to-r from-primary to-tech-secondary">
+                  Send Securely
+                </Button>
+              </div>
+            </form>
+          </Card>
+        )}
       </div>
     </section>
   );

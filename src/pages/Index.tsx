@@ -8,6 +8,7 @@ import AchievementsSection from "@/components/portfolio/AchievementsSection";
 import TestimonialsSection from "@/components/portfolio/TestimonialsSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Navbar from "@/components/portfolio/Navbar";
+import Footer from "@/components/portfolio/Footer";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <TestimonialsSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 };
