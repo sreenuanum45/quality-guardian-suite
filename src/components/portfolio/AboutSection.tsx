@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-background">
       <div className="container max-w-5xl mx-auto px-4">
         <div className="text-center mb-10 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-tech-secondary to-tech-accent bg-clip-text text-transparent">

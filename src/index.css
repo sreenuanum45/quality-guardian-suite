@@ -43,19 +43,12 @@
     --glass-bg: 255 255 255 / 0.1;
     --glass-border: 255 255 255 / 0.2;
     
-    /* Advanced Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(142 76% 36%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
-    --gradient-accent: linear-gradient(90deg, hsl(217 91% 60%), hsl(142 76% 36%));
-    --gradient-mesh: radial-gradient(ellipse at top left, hsl(217 91% 60% / 0.1), transparent 50%), 
-                     radial-gradient(ellipse at top right, hsl(142 76% 36% / 0.1), transparent 50%),
-                     radial-gradient(ellipse at bottom left, hsl(45 93% 47% / 0.1), transparent 50%);
-    --gradient-glow: linear-gradient(45deg, 
-                     hsl(217 91% 60% / 0.3) 0%, 
-                     hsl(142 76% 36% / 0.3) 25%,
-                     hsl(45 93% 47% / 0.3) 50%,
-                     hsl(217 91% 60% / 0.3) 75%,
-                     hsl(142 76% 36% / 0.3) 100%);
+  /* Optimized Gradients - Reduced complexity */
+  --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(142 76% 36%));
+  --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
+  --gradient-accent: linear-gradient(90deg, hsl(217 91% 60%), hsl(142 76% 36%));
+  --gradient-mesh: radial-gradient(ellipse at top left, hsl(217 91% 60% / 0.05), transparent 40%), 
+                   radial-gradient(ellipse at bottom right, hsl(142 76% 36% / 0.05), transparent 40%);
     
     /* Advanced Shadows */
     --shadow-card: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
@@ -238,11 +231,11 @@
     opacity: 1;
   }
 
-  /* Scroll-triggered animations */
+  /* Optimized scroll animations */
   .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .animate-on-scroll.visible {
@@ -252,8 +245,8 @@
 
   .animate-slide-in-left {
     opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .animate-slide-in-left.visible {
@@ -263,8 +256,8 @@
 
   .animate-slide-in-right {
     opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .animate-slide-in-right.visible {
