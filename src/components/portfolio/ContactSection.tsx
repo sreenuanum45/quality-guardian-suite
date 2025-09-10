@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,11 +14,20 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 via-background to-tech-secondary/5">
       <div className="container max-w-4xl mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Badge className="bg-gradient-to-r from-green-500 to-green-600 text-white">
+              Available for Hire
+            </Badge>
+            <Badge variant="outline" className="glass-card">
+              Response Time: Within 24hrs
+            </Badge>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-tech-secondary bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to contribute to your team's success with robust automation solutions
+            Ready to discuss opportunities or collaborate on exciting projects? 
+            Let's start a conversation about how we can work together.
           </p>
         </div>
 

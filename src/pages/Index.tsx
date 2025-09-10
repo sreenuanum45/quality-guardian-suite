@@ -9,13 +9,17 @@ import TestimonialsSection from "@/components/portfolio/TestimonialsSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Navbar from "@/components/portfolio/Navbar";
 import Footer from "@/components/portfolio/Footer";
+import RecruiterPanel from "@/components/portfolio/RecruiterPanel";
+import ExecutiveSummary from "@/components/portfolio/ExecutiveSummary";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <RecruiterPanel />
       <main id="main-content" tabIndex={-1} className="focus:outline-none">
         <HeroSection />
+        <ExecutiveSummary />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />

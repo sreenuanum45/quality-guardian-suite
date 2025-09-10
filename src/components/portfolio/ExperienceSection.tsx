@@ -72,7 +72,7 @@ const ExperienceSection = () => {
                 }`}>
                   <div className="space-y-3 sm:space-y-4">
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
                         <Badge className="glass-card bg-primary/80 text-primary-foreground text-xs sm:text-sm px-2 sm:px-3 py-1">
                           {exp.type}
                         </Badge>
@@ -80,15 +80,28 @@ const ExperienceSection = () => {
                           <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                           {exp.period}
                         </div>
+                        {index === 0 && (
+                          <Badge className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs px-2 py-1">
+                            Current
+                          </Badge>
+                        )}
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold gradient-text mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold gradient-text mb-2">
                         {exp.title}
                       </h3>
-                      <div className="flex items-center text-muted-foreground mb-2">
-                        <span className="font-medium">{exp.company}</span>
-                        <span className="mx-2">•</span>
-                        <MapPin className="h-4 w-4 mr-1" />
-                        <span>{exp.location}</span>
+                      <div className="flex items-center text-muted-foreground mb-3">
+                        <div className="w-8 h-8 bg-gradient-to-r from-primary to-tech-secondary rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm font-bold">
+                            {exp.company.split(' ')[0].charAt(0)}
+                          </span>
+                        </div>
+                        <div>
+                          <div className="font-medium text-foreground">{exp.company}</div>
+                          <div className="flex items-center text-sm">
+                            <MapPin className="h-3 w-3 mr-1" />
+                            <span>{exp.location}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
