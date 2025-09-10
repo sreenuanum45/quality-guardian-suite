@@ -60,6 +60,19 @@ export default {
 				section: {
 					bg: 'hsl(var(--section-bg))'
 				},
+				recruiter: {
+					available: 'hsl(var(--recruiter-available))',
+					urgent: 'hsl(var(--recruiter-urgent))',
+					success: 'hsl(var(--recruiter-success))',
+					warning: 'hsl(var(--recruiter-warning))',
+					info: 'hsl(var(--recruiter-info))'
+				},
+				status: {
+					online: 'hsl(var(--status-online))',
+					busy: 'hsl(var(--status-busy))',
+					away: 'hsl(var(--status-away))',
+					offline: 'hsl(var(--status-offline))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -173,6 +186,10 @@ export default {
 					'100%': { 
 						boxShadow: '0 0 5px hsl(var(--primary) / 0.3)',
 					}
+				},
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
@@ -192,7 +209,8 @@ export default {
 				'rotate-slow': 'rotate-slow 10s linear infinite',
 				'tilt': 'tilt 3s ease-in-out infinite',
 				'glass-morph': 'glass-morph 4s ease-in-out infinite',
-				'skill-glow': 'skill-glow 2s ease-in-out infinite'
+				'skill-glow': 'skill-glow 2s ease-in-out infinite',
+				'fade-in': 'fade-in 0.3s ease-out'
 			}
 		}
 	},

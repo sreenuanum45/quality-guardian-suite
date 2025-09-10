@@ -43,6 +43,19 @@
     --glass-bg: 255 255 255 / 0.1;
     --glass-border: 255 255 255 / 0.2;
     
+    /* Recruiter-Friendly Colors */
+    --recruiter-available: 142 76% 36%;
+    --recruiter-urgent: 25 95% 53%;
+    --recruiter-success: 142 84% 47%;
+    --recruiter-warning: 45 93% 47%;
+    --recruiter-info: 217 91% 60%;
+    
+    /* Status Indicators */
+    --status-online: 120 100% 25%;
+    --status-busy: 0 100% 50%;
+    --status-away: 45 100% 51%;
+    --status-offline: 0 0% 60%;
+    
   /* Optimized Gradients - Reduced complexity */
   --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(142 76% 36%));
   --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
