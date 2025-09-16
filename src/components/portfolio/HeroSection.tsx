@@ -4,7 +4,7 @@ import ProfileCard from "./hero/ProfileCard";
 import BackgroundEffects from "./hero/BackgroundEffects";
 
 const HeroSection = () => {
-  const { ref: heroRef, isVisible } = useScrollAnimation({ triggerOnce: true });
+  const { ref: heroRef, isVisible } = useScrollAnimation({ triggerOnce: true, threshold: 0, rootMargin: '100% 0px' });
 
   return (
     <section 

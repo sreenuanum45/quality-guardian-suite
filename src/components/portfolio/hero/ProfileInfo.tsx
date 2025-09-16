@@ -9,7 +9,7 @@ interface ProfileInfoProps {
 const ProfileInfo = ({ isVisible }: ProfileInfoProps) => {
   return (
     <div className={`text-center lg:text-left space-y-4 sm:space-y-6 transition-all duration-700 ${
-      isVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-50px]'
+      isVisible ? 'animate-slide-in-left opacity-100' : 'opacity-100'
     }`}>
       <div className="space-y-3 sm:space-y-4">
         <Badge className="bg-gradient-to-r from-tech-primary to-tech-secondary text-white px-3 py-1.5 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300">

@@ -16,7 +16,7 @@ const ProfileCard = ({ isVisible }: ProfileCardProps) => {
 
   return (
     <div className={`flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
-      isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[50px]'
+      isVisible ? 'animate-slide-in-right opacity-100' : 'opacity-100'
     }`}>
       <Card className="group p-6 sm:p-8 bg-gradient-to-br from-card via-card to-section-bg shadow-xl hover:shadow-floating backdrop-blur-sm border-glass-border hover:scale-105 transition-all duration-500 max-w-md w-full relative overflow-hidden">
         {/* Optimized Glassmorphism Effect */}
