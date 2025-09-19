@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,26 @@ import ProtectedMailto from "@/components/security/ProtectedMailto";
 const RecruiterPanel = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
+  const [isPanelVisible, setIsPanelVisible] = useState(true);
+
+  // Auto-close panel after 10 seconds
+  useEffect(() => {
+    if (isPanelVisible && !isDesktopCollapsed) {
+      const timer = setTimeout(() => {
+        setIsPanelVisible(false);
+      }, 10000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isPanelVisible, isDesktopCollapsed]);
+
+  const handleTogglePanel = () => {
+    setIsPanelVisible(!isPanelVisible);
+  };
+
+  const handleClosePanel = () => {
+    setIsPanelVisible(false);
+  };
 
   const quickStats = [
     { label: "Experience", value: "2.6+ Years", icon: Calendar, detail: "QA Automation Engineer" },
@@ -53,19 +73,30 @@ const RecruiterPanel = () => {
       </div>
 
       {/* Desktop Side Panel */}
-      <div className={`hidden md:block fixed right-4 top-1/2 -translate-y-1/2 z-40 transition-all duration-500 ${
-        isDesktopCollapsed ? 'translate-x-64' : 'translate-x-0'
-      }`}>
-        <Card className="recruiter-panel p-6 border border-primary/30 shadow-floating">
-          {/* Collapse Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)}
-            className="absolute -left-10 top-4 rounded-l-lg rounded-r-none bg-primary text-primary-foreground hover:bg-primary/90 px-2"
-          >
-            {isDesktopCollapsed ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-          </Button>
+      {isPanelVisible && (
+        <div className={`hidden md:block fixed right-4 top-1/2 -translate-y-1/2 z-40 transition-all duration-500 ${
+          isDesktopCollapsed ? 'translate-x-64' : 'translate-x-0'
+        }`}>
+          <Card className="recruiter-panel p-6 border border-primary/30 shadow-floating">
+            {/* Collapse Toggle */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)}
+              className="absolute -left-10 top-4 rounded-l-lg rounded-r-none bg-primary text-primary-foreground hover:bg-primary/90 px-2"
+            >
+              {isDesktopCollapsed ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+            </Button>
+
+            {/* Close Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleClosePanel}
+              className="absolute -right-2 -top-2 rounded-full w-8 h-8 p-0 bg-destructive/10 hover:bg-destructive/20 text-muted-foreground hover:text-destructive transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </Button>
 
           <div className={`space-y-6 transition-all duration-300 ${isDesktopCollapsed ? 'w-0 overflow-hidden' : 'w-64'}`}>
             <div className="text-center space-y-3">
@@ -172,6 +203,19 @@ const RecruiterPanel = () => {
           </div>
         </Card>
       </div>
+      )}
+
+      {/* Show Panel Button - appears when panel is hidden */}
+      {!isPanelVisible && (
+        <div className="hidden md:block fixed right-4 top-1/2 -translate-y-1/2 z-40">
+          <Button
+            onClick={handleTogglePanel}
+            className="rounded-full w-12 h-12 bg-gradient-to-r from-primary to-tech-secondary shadow-glow hover:shadow-xl transition-all duration-500 animate-pulse-glow"
+          >
+            <Users className="h-5 w-5" />
+          </Button>
+        </div>
+      )}
 
       {/* Mobile Expanded Panel */}
       {isExpanded && (
