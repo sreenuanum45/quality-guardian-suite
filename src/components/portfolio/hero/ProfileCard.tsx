@@ -9,7 +9,7 @@ interface ProfileCardProps {
 const ProfileCard = ({ isVisible }: ProfileCardProps) => {
   const stats = [
     { value: "500+", label: "Test Cases Automated", color: "primary" },
-    { value: "2.6+", label: "Years Experience", color: "tech-secondary" },
+    { value: "2.8", label: "Years Experience", color: "tech-secondary" },
     { value: "80%", label: "Effort Reduction", color: "tech-accent" },
     { value: "3+", label: "Zero-Defect Releases", color: "primary" }
   ];

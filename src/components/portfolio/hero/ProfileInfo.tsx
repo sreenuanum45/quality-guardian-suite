@@ -28,7 +28,7 @@ const ProfileInfo = ({ isVisible }: ProfileInfoProps) => {
         </h2>
         
         <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
-          2.6+ years of expertise in automated testing, CI/CD integration, and delivering 
+          2.8 years of expertise in automated testing, CI/CD integration, and delivering
           <span className="text-primary font-medium"> high-quality software solutions</span>
         </p>
       </div>

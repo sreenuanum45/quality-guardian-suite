@@ -30,24 +30,24 @@ const RecruiterPanel = () => {
   };
 
   const quickStats = [
-    { label: "Experience", value: "2.6+ Years", icon: Calendar, detail: "QA Automation Engineer" },
+    { label: "Experience", value: "2.8 Years", icon: Calendar, detail: "QA Automation Engineer" },
     { label: "Test Cases", value: "500+", icon: Target, detail: "Automated & Executed" },
-    { label: "Projects", value: "10+", icon: Github, detail: "Successfully Delivered" },
+    { label: "Projects", value: "2+", icon: Github, detail: "Successfully Delivered" },
     { label: "Response", value: "< 24hrs", icon: Clock, detail: "Average Response Time" },
   ];
 
   const contactMethods = [
-    { label: "Resume", icon: Download, action: () => window.open('/resume.pdf', '_blank'), variant: "default" as const, priority: true },
-    { label: "Email", icon: Mail, action: () => window.open('mailto:your.email@example.com'), variant: "outline" as const },
-    { label: "WhatsApp", icon: MessageSquare, action: () => window.open('https://wa.me/1234567890', '_blank'), variant: "outline" as const },
-    { label: "LinkedIn", icon: Linkedin, action: () => window.open('https://linkedin.com/in/yourprofile', '_blank'), variant: "outline" as const },
-    { label: "GitHub", icon: Github, action: () => window.open('https://github.com/yourprofile', '_blank'), variant: "outline" as const },
-    { label: "Schedule", icon: Calendar, action: () => window.open('https://calendly.com/yourprofile', '_blank'), variant: "secondary" as const },
+    { label: "Resume", icon: Download, action: () => window.open('https://drive.google.com/file/d/1gW6pjX7oxx0pMBqsyFa3-4yaSzyY6JKq/view?usp=drive_link', '_blank'), variant: "default" as const, priority: true },
+    { label: "Email", icon: Mail, action: () => window.open('mailto:anumandlasreenu@gmail.com'), variant: "outline" as const },
+    { label: "WhatsApp", icon: MessageSquare, action: () => window.open('https://wa.me/917416472820', '_blank'), variant: "outline" as const },
+    { label: "LinkedIn", icon: Linkedin, action: () => window.open('https://www.linkedin.com/in/anumandla-sreenu/', '_blank'), variant: "outline" as const },
+    { label: "GitHub", icon: Github, action: () => window.open('https://github.com/sreenuanum45', '_blank'), variant: "outline" as const },
+    { label: "Schedule", icon: Calendar, action: () => window.open('https://calendly.com/anumandlasreenu', '_blank'), variant: "secondary" as const },
   ];
 
   const achievements = [
-    { label: "Certifications", value: "5+", icon: Award },
-    { label: "Rating", value: "4.9/5", icon: Star },
+    { label: "Certifications", value: "4+", icon: Award },
+    { label: "Effort Saved", value: "80%", icon: Star },
   ];
 
   const scrollToSection = (id: string) => {
